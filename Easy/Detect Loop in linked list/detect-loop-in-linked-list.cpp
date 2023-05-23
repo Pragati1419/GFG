@@ -49,14 +49,14 @@ class Solution
     bool detectLoop(Node* head)
     {
         // your code here
-         Node*slow=head;
-        Node*fast=head;
-        while(fast!=NULL&&fast->next!=NULL)
-        {
+        Node *fast=head;
+        Node *slow=head;
+        
+        while(fast && fast->next){
             slow=slow->next;
             fast=fast->next->next;
             if(slow==fast)
-                return true;
+            return true;
         }
         return false;
     }
